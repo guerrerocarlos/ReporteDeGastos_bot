@@ -7,7 +7,6 @@ on:
 
 env:
   BOT_TOKEN: ${{secrets.BOT_TOKEN}}
-  DEST_ID: ${{secrets.DEST_ID}}
 
 jobs:
   deploy:
@@ -26,11 +25,11 @@ jobs:
         id: cache
         with:
           path: node_modules
-          key: ${{ hashFiles('**/package-lock.json') }}
+          key: ${{ hashFiles('**/yarn.lock') }}
 
       - name: Install node_modules
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: yarn install
 
       - name: Deploy
         run: npx serverless@2.62.0 deploy

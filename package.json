@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lambda-request-handler": "^0.5.1-alpha1",
     "telegraf": "^4.4.2"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.1147.0",
+    "serverless-offline": "^8.8.0"
   }
 }
