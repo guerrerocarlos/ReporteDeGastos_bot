@@ -14,12 +14,12 @@ const config = {
           {
             Effect: "Allow",
             Action: ["s3:*"],
-            Resource: "arn:aws:s3:::r3js",
+            Resource: "arn:aws:s3:::"+process.env.BUCKET+"",
           },
           {
             Effect: "Allow",
             Action: ["s3:*"],
-            Resource: "arn:aws:s3:::r3js/*",
+            Resource: "arn:aws:s3:::"+process.env.BUCKET+"/*",
           },
         ],
       },
